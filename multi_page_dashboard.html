@@ -1,0 +1,43 @@
+// src/pages/Reports.tsx
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { Card, CardContent } from "@/components/ui/card";
+
+const Reports: React.FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <div className="p-4 space-y-4">
+      <h1 className="text-2xl font-bold">{t("reports.title")}</h1>
+      <p>{t("reports.description")}</p>
+      <Card>
+        <CardContent className="text-center">
+          <p>{t("reports.weekly_summary")}</p>
+          <p className="text-sm text-muted-foreground">{t("reports.auto_generated")}</p>
+        </CardContent>
+      </Card>
+    </div>
+  );
+};
+
+export default Reports;
+
+// locales/en/translation.json
+{
+  "reports": {
+    "title": "Reports",
+    "description": "View your weekly and monthly performance reports.",
+    "weekly_summary": "Weekly Summary Report",
+    "auto_generated": "Auto-generated every Sunday at 8AM"
+  }
+}
+
+// locales/ar/translation.json
+{
+  "reports": {
+    "title": "التقارير",
+    "description": "عرض تقارير الأداء الأسبوعية والشهرية.",
+    "weekly_summary": "تقرير الملخص الأسبوعي",
+    "auto_generated": "يتم إنشاؤه تلقائيًا كل أحد الساعة 8 صباحًا"
+  }
+}
